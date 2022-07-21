@@ -10,4 +10,9 @@ def decode_char(char)
   morse_char.key(char)
 end
 
-print decode_char('.--')
+def decode_word(word)
+  new_word = word.split
+  word_result = new_word.map { |char| decode_char(char) }
+  word_result.join
+end
+print decode_word('-- -.--')
