@@ -15,4 +15,11 @@ def decode_word(word)
   word_result = new_word.map { |char| decode_char(char) }
   word_result.join
 end
-print decode_word('-- -.--')
+
+def decode_message(message)
+  new_message = message.split('  ')
+  message_result = new_message.map { |word| decode_word(word) }
+  message_result.join(' ')
+end
+
+print decode_message('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
